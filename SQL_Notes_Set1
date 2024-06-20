@@ -1,0 +1,168 @@
+1. Explain the Difference between a stored Procedure and a Function?
+
+Ans. A Stored Procedure is a set of SQL statement that can be executed as a single unit. It can have input and output parameters and may not return a value directly.
+     A Function, on other hand always return a value and is primarily used for calculations or transformations. Functions can be used in SELECT statements, whereas Stored Procedure cannot.
+
+2. How Do you Optimize a Slow-Performing SQL Query?
+
+Ans. Optimizing a Slow Query involves various strategies, including :
+     * Analyzing query execution Plan.
+     * Adding appropriate indexes.
+     * Reducing the number of Rows returned.
+     * Rewriting complex queries.
+     * Adjusting database configuration settings.
+     * Using Caching Mechanism.
+     * Considering hardware Upgrades.
+
+3. What is an Index, and why is it important in Database?
+
+Ans. An Index is a database structure that improves the speed of Data retrieval operations on a table.
+     It works like an ordered list of values, allowing the database system to quickly locate the Rows
+     that match  a query's WHERE clause. Indexes are crucial for improving query performance, especially on large Dataset.
+
+4. How does the SQL injection attack works, and how can you prevent it?
+
+Ans. SQL injection is a type of Cyberattack where malicious SQL code is inserted into input field, often resulting in unauthorized
+     access or data manipulation.
+     To Prevent SQL Injection, you can :
+        * Use Parameterized Queries or Prepared Statements.
+        * Implement input Validation and Sanitization.
+        * Avoid Dynamic SQL Queries with concatenated user Input.
+        * Apply the least privilege of Database Account.
+
+5. What is the Difference between GROUP BY and HAVING clause?
+
+Ans. GROUP BY is used to group rows that have the same values in the Specified columns, typically for aggregation purpose(e.g. SUM, COUNT)
+     HAVING is used to filter the results of a GROUP BY query based on a condition applied to the aggregated values.
+     Having is used after GROUP BY to filter groups, while WHERE filters individual rows.
+
+6. What is a correlated Subquery, and when would you use one?
+
+Ans. A Correlated Subquery is a subquery that depends on the values from the Outer Query. It Executes once for Each row Processed by the outer query.
+     Correlated subqueries are used when you need to reference values from the outer query within the subquery, typically for filtering or aggregation purposes.
+
+
+7. Describe the Difference between INNER JOIN, LEFT JOIN, and RIGHT JOIN?
+
+Ans. INNER JOIN returns only he rows with the Matching values in Both Tables.
+     LEFT JOIN returns all rows from the left table and the matched rows from the right Table. Unmatched rows on the left will have NULL values.
+     RIGHT JOIN is similar to LEFT JOIN but returns all rows from the right table and the matched rows from the left table.
+
+8. What is Self-join and when you use it?
+
+Ans. A self-join is a type of join where a table is joined with itself. It is useful when you have hierarchical data or when you need to create relationship
+     within the same table, such a when working with organizational charts or friend networks.
+
+9. What is subquery, and how it is Different from a JOIN?
+
+Ans. A Subquery is a query nested inside another query. It can be used to retrieve data that will be used as a condition in the outer query.
+     A JOIN, on other hand, combines data from two or more tables in a single result set.
+     Subqueries are often used form complex filtering conditions or to retrieve aggregated data.
+
+10. Explain the Difference between UNIOUN and UNIOUN ALL ?
+
+Ans. UNIOUN combines the result sets of two or more SELECT statements into a single result set while removing duplicate rows.
+     UNIOUN ALL. however includes all rows from each SELECT statement, even if they are duplicates.
+     Use UNIOUN when you want to eliminate duplicate rows and UNIOUN ALL when you want to retain them.
+
+11. What is Primary Key and why is it Important?
+
+Ans. A Primary is a unique identifier for each record in a table. It ensures that each row in the table is uniquely identifiable.
+     Primary Key are important because they :
+      * Enforce data integrity by preventing duplicate or null values
+      * Facilitates efficient data retrieval and JOIN operations.
+      * Serves as a reference for Foreign Key in related tables, establishing relationships.
+
+12. What is a Foreign Key and how does it relates to a primary key?
+
+Ans. A foreign key is a field in one table that refers to the primary key in another table. It Establish relationship between tables in a relational Database.
+     It Enforces referential integrity, ensuring that data in Related table remains consistent.
+
+13. Define Normalization and its benefits?
+
+Ans. Normalization is the process of organizing data in a database to reduces redundancy and improve data integrity.
+     It involves breaking down large tables into smaller, related tables.
+     Benefits include :
+        * Reducing Data Duplication and Storage requirements.
+        * Preventing data anomalies such as update anomalies.
+        * Simplifying data maintenance and improving database performance.
+
+14. Explain Denormalization and when it might be useful?
+
+Ans. Denormalization is the process of intentionally introducing redundancy into a database to improve query performance. It can be useful when read-heavy operations are common,
+     and trade-off between storage and query performance is acceptable.
+
+15. What is SQL and why is it essential?
+
+Ans. SQL(Structured Query Language) is a domain specific language used for managing and manipulating relational databases. It allows users to create, retrieve, update and
+     delete data from relational database management system (RDBMS). SQL is essential because it provides a standardize way to interact with databases, making it easier to store
+     retrieve and manipulate data efficiently.
+
+16. Differentiate between SQL and NoSQL database?
+
+Ans. SQL database are relational databases that use structured schemas and tables to store data. They are Suitable for application with complex relationships between data.
+     NoSQL databases are non-relational and often use flexible schemas like JSON and XML. They are ideal for application that require Scalability and handle
+     unstructured or semi-structured data.
+
+17. Explain ACID Properties in the context of SQL Databases?
+
+Ans. ACID stand for Atomicity, Consistency, Isolation and Durability. These properties ensure the reliability of database transactions :
+     Atomicity : Ensures that a transaction is treated as a single, indivisible unit. Either all its changes are applied or none.
+     Consistency : Guarantees that a transaction takes the database from one consistence state to another, maintaining data integrity.
+     Isolation : Ensures that multiple transaction can run concurrently without interfering with each other.
+     Durability : Ensures that once a transaction is committed, its changes are permanent and Survive System failure.
+
+18. What are CTEs(Common Table Expressions), and how are they used?
+
+Ans. Common Table Expressions(CTEs) are temporary result sets that you can reference within a SELECT, INSERT, UPDATE or DELETE statement.
+     CTEs makes complex queries more readable and maintainable. They are defined using WITH keyword and can be recursive and non-recursive.
+
+19. How do you perform Data paging in SQL?
+
+Ans. To implement data paging in SQL, you typically use the OFFSET and FETCH clauses(available in SQL Server, PostgreSQL and some other databases)
+     or the LIMIT and OFFSET clauses(common in MYSQL and SQLite). This Clauses allow you to retrieve a subset of row from a result set, useful for pagination.
+
+20. Explain the Concept of SQL Cursor?
+
+Ans. SQL Cursors are database objects used to iterate over the result set of a SELECT query, one row at a time. Cursors are typically used within Stored Procedures
+     or Triggers when you need to process rows sequentially, performing actions on each row.
+
+21. What is the Purpose of SQL TRUNCATE statement?
+
+Ans. The TRUNCATE statement is used to remove all rows from a table quickly. Unlike DELETE statement, which removes rows one at time and logs each deletion.
+     TRUNCATE deallocates the entire data storage and is faster. However, it cannot be rolled back and its does not trigger and DELETE triggers.
+
+22. Describe the difference between CHAR and VARCHAR datatypes?
+
+Ans. CHAR and VARCHAR are both used to store character strings, but they differ in storage and behavior :
+     CHAR has fixed length and it pads values with spaces to the specified length.
+     VARCHAR has a variable length and only use the space needed for the actual value, saving storage space.
+
+23.Explain the difference between the UNIOUN and JOIN Operations?
+
+Ans. UNIOUN combines rows from two or more tables into a single result sets removing duplicates.
+     JOIN combines columns from two or more tables into single result set based on specified condition, allowing you to retrieve related data from multiple tables.
+
+24. What is the Purpose of the SQL DDL and DML statements?
+
+Ans. Data Definition Language(DDL) statements are used to define, alter or drop database objects like tables, indexes and views.
+     Data Manipulation Language(DML) Statements are used to manipulate data in the database, including inserting, updating and deleting records.
+
+25. What is the purpose of the SQL CASE statements?
+
+Ans. The SQL CASE statements is used for conditional logic in queries. It allows you to return different values or perform different actions based on specific conditions.
+     It can be used in SELECT, WHERE and another clauses to customize query results.
+
+26. Explain the concept of view in SQL?
+
+Ans. A view is a virtual table generated by a query. It consist of a SELECT statement that retrieves data from one or more underlying tables. Views are used for security, Simplifying
+     complex queries and providing a logical representation of data without storing it physically.
+
+27. How does the EXISTS clause work and when would you use it?
+
+Ans. The EXISTS clause is used to check for the existence of rows in a subquery. It Returns TRUE if the subquery returns any rows,
+     otherwise, it returns FALSE. EXISTS is often used with correlated subqueries when you need to check the presence of related data.
+
+28. What is the Purpose of SQL COUNT() Function?
+
+Ans. Then COUNT() function is used to count the number of rows that meet a specified condition in a table. It is often used with the GROUP BY clause to perform aggregate counting operations.
